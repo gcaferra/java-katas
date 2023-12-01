@@ -5,11 +5,12 @@ public class FileParser implements IFileParser {
 
     @Override
     public List<ActionItem> Parse(List<String> rowsToParse) {
-        var parsedRows = new ArrayList<ActionItem>();
+        var actionItems = new ArrayList<ActionItem>();
         for (var row : rowsToParse) {
-            var rowParts = getRowParts(row);
+            var actionItem = getRowParts(row);
+            actionItems.add(actionItem);
         }
-        return parsedRows;
+        return actionItems;
     }
 
     public ActionItem getRowParts(String row) {
