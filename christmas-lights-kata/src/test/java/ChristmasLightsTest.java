@@ -1,6 +1,6 @@
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.Mockito.*;
 
 public class ChristmasLightsTest {
 
@@ -81,5 +81,13 @@ public class ChristmasLightsTest {
                  lightsCount += cl.getStatus(x,y);
 
         assertEquals(997997, lightsCount);
+    }
+
+    @Test
+    public void lightsCanBeTurnedOnBasedOnInput()
+    {
+        var fileParser = mock(IFileParser.class);
+
+
     }
 }
