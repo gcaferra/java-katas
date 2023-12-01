@@ -33,4 +33,17 @@ public class FileParserTest {
         assertEquals(197, actual.targetY());
 
     }
+
+    @Test
+    public void toggleRowHas4Elements(){
+        var parser = new FileParser();
+        var actual = parser.getRowParts("toggle 322,558 through 977,958");
+
+        assertEquals("toggle", actual.action());
+        assertEquals(322, actual.sourceX());
+        assertEquals(558, actual.sourceY());
+        assertEquals(977, actual.targetX());
+        assertEquals(958, actual.targetY());
+
+    }
 }
